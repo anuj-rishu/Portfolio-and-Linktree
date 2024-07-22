@@ -18,7 +18,7 @@ function App() {
           <Route path="/project" element={<Project  />} />
           <Route path="/" element={<LinkTree UserName= "Anuj Rishu Tiwari" />} />
         </Routes>
-        <Footer date="28 June 2024" />
+        <Footer date="22 July 2024" />
       </div>
 
   );
