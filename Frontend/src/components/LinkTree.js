@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faInstagram, faXTwitter, faDev } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin,faCode, faInstagram, faXTwitter, faDev } from '@fortawesome/free-brands-svg-icons';
 
 import { faBriefcase,faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import ImageComponent from './ImageComponent'; 
-import { Link } from 'react-router-dom'
+
 
 
 function Linktree( {UserName}) {
@@ -32,6 +32,10 @@ function Linktree( {UserName}) {
 
        <a className="link" href={process.env.REACT_APP_LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={faLinkedin} />&nbsp;Linkedin
+</a>
+<a className="link" href={process.env.REACT_APP_LEETCODE_URL} target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faBriefcase} />&nbsp;LeetCode
+   
 </a>
 <a className="link" href={process.env.REACT_APP_GITHUB_URL} target="_blank" rel="noopener noreferrer">
     <FontAwesomeIcon icon={faGithub} />&nbsp;Github
