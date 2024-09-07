@@ -53,7 +53,7 @@ export function LinkTree() {
           className="rounded-full mx-auto mb-4  border-white/50"
         />
         <h1 className="text-3xl font-bold mb-2">Anuj Tiwari</h1>
-        <p className="text-xl text-white/80">Mern Stack | Backend Devloper</p>
+        <p className="text-xl text-white/80">Mern Stack | Backend Developer</p>
       </motion.div>
       <motion.div className="space-y-4">
         {links.map((link, index) => (
