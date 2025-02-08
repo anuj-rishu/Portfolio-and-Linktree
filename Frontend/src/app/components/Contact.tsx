@@ -67,7 +67,7 @@ export function Contact() {
 
     return (
         <motion.div
-            className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/20"
+            className="bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/20"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -78,14 +78,14 @@ export function Contact() {
                 variants={itemVariants}
             >
                 <motion.h2
-                    className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-white"
+                    className="text-3xl font-bold text-white mb-2"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                 >
                     Get in Touch
                 </motion.h2>
                 <motion.p
-                    className="text-white/70"
+                    className="text-white/90 font-medium"
                     variants={itemVariants}
                 >
                     Let's connect and create something amazing together
@@ -101,9 +101,9 @@ export function Contact() {
                         onChange={handleChange}
                         value={formData.name}
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 
-                        focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent transition-all duration-300
-                        hover:bg-white/15"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white/90 
+                        placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 
+                        focus:border-transparent transition-all duration-300 hover:bg-white/10"
                     />
                 </motion.div>
 
@@ -115,9 +115,9 @@ export function Contact() {
                         onChange={handleChange}
                         value={formData.email}
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 
-                        focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent transition-all duration-300
-                        hover:bg-white/15"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white/90 
+                        placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 
+                        focus:border-transparent transition-all duration-300 hover:bg-white/10"
                     />
                 </motion.div>
 
@@ -129,9 +129,9 @@ export function Contact() {
                         value={formData.message}
                         required
                         rows={4}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 
-                        focus:outline-none focus:ring-2 focus:ring-teal-500/50 focus:border-transparent transition-all duration-300
-                        hover:bg-white/15 resize-none"
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white/90 
+                        placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 
+                        focus:border-transparent transition-all duration-300 hover:bg-white/10 resize-none"
                     />
                 </motion.div>
 
@@ -139,9 +139,10 @@ export function Contact() {
                     <motion.button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-4 px-6 bg-gradient-to-r from-teal-500 to-blue-500 text-white font-medium rounded-xl
-                        transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg
-                        hover:shadow-teal-500/25"
+                        className="w-full py-4 px-6 bg-white/10 text-white font-medium rounded-xl
+                        transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed 
+                        hover:bg-white/20 hover:shadow-lg hover:shadow-white/5 border border-white/10
+                        hover:border-white/30"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                     >

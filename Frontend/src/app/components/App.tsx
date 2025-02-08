@@ -10,8 +10,13 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-400 via-blue-500 to-indigo-600 text-white">
-      <div className="max-w-4xl mx-auto px-4 py-8 flex flex-col min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+      <div 
+        className="max-w-4xl mx-auto px-4 py-8 flex flex-col min-h-screen"
+        style={{
+          backgroundImage: "radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 100%)"
+        }}
+      >
         <Navbar setCurrentPage={setCurrentPage} currentPage={currentPage} />
         <main className="flex-grow flex items-center justify-center">
           <AnimatePresence mode="wait">
