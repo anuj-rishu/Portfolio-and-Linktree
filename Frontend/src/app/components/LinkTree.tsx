@@ -105,7 +105,7 @@ export function LinkTree() {
           className="text-3xl font-bold mb-2 text-white"
           whileHover={{ scale: 1.05 }}
         >
-          Anuj RishuTiwari
+          Anuj Rishu Tiwari
         </motion.h1>
         <motion.p
           className="text-xl text-white/90 font-medium"
