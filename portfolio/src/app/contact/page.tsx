@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, ArrowLeft } from "lucide-react";
-import Link from "next/link";
+
 import Contact from "../components/contact";
 
 export default function ContactPage() {
@@ -12,10 +11,6 @@ export default function ContactPage() {
     to-black text-white"
     >
       <div className="max-w-6xl mx-auto px-4 py-16">
-        {/* Back button with enhanced styling */}
-       
-
-        {/* Page Title */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -35,7 +30,6 @@ export default function ContactPage() {
           </p>
         </motion.div>
 
-        {/* Contact Form Component */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -45,7 +39,6 @@ export default function ContactPage() {
         </motion.div>
       </div>
 
-      {/* Footer */}
       <div className="mt-auto"></div>
     </div>
   );

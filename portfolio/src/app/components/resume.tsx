@@ -1,16 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  ArrowLeft,
-  Download,
-  Calendar,
-  MapPin,
-  Mail,
-  Phone,
-  Github,
-  Linkedin,
-} from "lucide-react";
+import { Download, Calendar, MapPin, Mail } from "lucide-react";
 
 export default function ResumePage() {
   const experience = [
@@ -25,8 +16,19 @@ export default function ResumePage() {
         "Optimized database queries and improved application performance",
       ],
     },
-    // Add more experiences...
   ];
+
+  const publications = [
+  {
+    title: "Global Energy Consumption Patterns and Optimization using Big Data",
+    conference: "International Conference on Communication and Electronics Systems (ICCES)",
+    year: "2024",
+    doi: "10.1109/ICCES63552.2024.10859370",
+    link: "https://ieeexplore.ieee.org/document/10859370",
+    description: "Analyzing global energy consumption patterns and leveraging big data for optimization to enhance efficiency, reduce waste, and promote sustainable energy usage.",
+    keywords: ["Machine Learning", "Healthcare", "Real-time Monitoring"]
+  }
+];
 
   const education = [
     {
@@ -67,7 +69,6 @@ export default function ResumePage() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
       <div className="max-w-4xl mx-auto px-4 py-16">
-        {/* Resume Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +86,6 @@ export default function ResumePage() {
           </div>
         </motion.div>
 
-        {/* Download Button */}
         <motion.div
           className="mb-12 text-center"
           initial={{ opacity: 0 }}
@@ -106,7 +106,6 @@ export default function ResumePage() {
           </motion.a>
         </motion.div>
 
-        {/* Experience Section */}
         <motion.section
           className="mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -143,7 +142,6 @@ export default function ResumePage() {
           </div>
         </motion.section>
 
-        {/* Skills Section */}
         <motion.section
           className="mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -177,7 +175,6 @@ export default function ResumePage() {
           </div>
         </motion.section>
 
-        {/* Education Section */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -210,7 +207,69 @@ export default function ResumePage() {
             </motion.div>
           ))}
         </motion.section>
+        <motion.section
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+  className="mb-12"
+>
+  <h2 className="text-2xl font-bold mb-6 mt-10 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+    Publications
+  </h2>
+  {publications.map((pub, index) => (
+    <motion.div
+      key={index}
+      className="bg-white/5 mt-5 rounded-xl p-6 border border-white/10"
+      whileHover={{ scale: 1.02 }}
+    >
+      <h3 className="text-xl font-bold mb-2">{pub.title}</h3>
+      <p className="text-white/70 mb-4">{pub.conference}</p>
+      <div className="flex gap-4 text-sm text-white/60 mb-4">
+        <span className="flex items-center gap-1">
+          <Calendar size={16} /> {pub.year}
+        </span>
+        <span className="flex items-center gap-1">
+          DOI: {pub.doi}
+        </span>
       </div>
+      <p className="text-white/80 mb-4">{pub.description}</p>
+      <div className="flex flex-wrap gap-2 mb-4">
+        {pub.keywords.map((keyword, i) => (
+          <span
+            key={i}
+            className="px-3 py-1 bg-white/10 rounded-full text-sm text-white/70"
+          >
+            {keyword}
+          </span>
+        ))}
+        </div>
+      <motion.a
+        href={pub.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
+        whileHover={{ scale: 1.05 }}
+      >
+        <span>View Publication</span>
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+          />
+        </svg>
+      </motion.a>
+    </motion.div>
+  ))}
+</motion.section>
+      </div>
+ 
     </div>
   );
 }
