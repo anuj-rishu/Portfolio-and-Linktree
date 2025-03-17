@@ -34,7 +34,7 @@ export function Hero() {
           <div className="relative z-10 w-full h-full rounded-full p-1 bg-gradient-to-r from-blue-500 to-purple-500">
             <div className="w-full h-full rounded-full p-0.5 bg-black">
               <Image
-                src="https://res.cloudinary.com/dtberehdy/image/upload/v1739037009/IMG_0686_g8bws3.jpg"
+                src="https://res.cloudinary.com/dtberehdy/image/upload/v1742234229/anuj_a4avvl.png"
                 alt="Anuj Rishu Tiwari"
                 width={160}
                 height={160}

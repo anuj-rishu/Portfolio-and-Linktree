@@ -1,16 +1,15 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Github, MapPin } from "lucide-react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-import { Circles } from "react-loader-spinner";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -19,57 +18,58 @@ export default function ContactPage() {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
       content: "anujtiwari4454@outlook.com",
-      link: "mailto:anujtiwari4454@outlook.com"
+      link: "mailto:anujtiwari4454@outlook.com",
     },
     {
       icon: <Github className="w-6 h-6" />,
       title: "GitHub",
       content: "@anuj-rishu",
-      link: "https://github.com/anuj-rishu"
+      link: "https://github.com/anuj-rishu",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
       content: "Lucknow, Uttar Pardesh",
-      link: "https://maps.google.com"
-    }
+      link: "https://maps.google.com",
+    },
   ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    toast.loading('Sending message...', { id: 'sending' });
-    
+    toast.loading("Sending message...", { id: "sending" });
+
     try {
-      await axios.post('https://link-tree-backend-c9mp.vercel.app/api/send', formData);
+      await axios.post(
+        "https://link-tree-backend-c9mp.vercel.app/api/send",
+        formData
+      );
       setLoading(false);
-      toast.success('Message sent successfully!', {
-        id: 'sending',
-        icon: '🎉',
+      toast.success("Message sent successfully!", {
+        id: "sending",
+        icon: "🎉",
         duration: 3000,
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       setLoading(false);
-      toast.error('Failed to send message', {
-        id: 'sending',
-        icon: '❌',
+      toast.error("Failed to send message", {
+        id: "sending",
+        icon: "❌",
       });
     }
   };
 
   return (
-    <div className="min-h-screen  text-white px-4">
+    <div className="min-h-screen text-white px-4">
       <Toaster position="top-center" />
-      
+
       <div className="max-w-4xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-        >
-         
-        </motion.div>
+        ></motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
@@ -86,7 +86,9 @@ export default function ContactPage() {
                   name="name"
                   placeholder="Your Name"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl 
                            text-white placeholder-white/50 focus:outline-none focus:ring-2 
                            focus:ring-white/30 transition-all"
@@ -99,7 +101,9 @@ export default function ContactPage() {
                   name="email"
                   placeholder="Your Email"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl 
                            text-white placeholder-white/50 focus:outline-none focus:ring-2 
                            focus:ring-white/30 transition-all"
@@ -111,7 +115,9 @@ export default function ContactPage() {
                   name="message"
                   placeholder="Your Message"
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   rows={6}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl 
                            text-white placeholder-white/50 focus:outline-none focus:ring-2 
@@ -128,15 +134,15 @@ export default function ContactPage() {
                 whileTap={{ scale: 0.98 }}
               >
                 {loading ? (
-                  <Circles
-                    height="24"
-                    width="24"
-                    color="#ffffff"
-                    ariaLabel="sending-message"
-                    wrapperStyle={{ display: 'inline-block' }}
-                  />
+                  <div className="flex items-center justify-center">
+                    <svg className="animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </div>
                 ) : (
-                  'Send Message'
+                  "Send Message"
                 )}
               </motion.button>
             </form>

@@ -10,21 +10,12 @@ const hackathons = [
     position: "Winner",
     project: "EVENT TICKETING PLATFORM",
     description: "Developed an innovative healthcare system using AI for smart diagnosis and patient monitoring. Won first place among 100+ teams.",
-    tech: ["Python", "TensorFlow", "React", "Node.js"],
-    image: "/hackathons/sih.png",
+    tech: ["React", "Node.js"],
+    image: "https://res.cloudinary.com/dtberehdy/image/upload/v1742234133/certificate.png",
     date: "February 2025",
     prize: "₹10,000"
   },
-  {
-    title: "HackWIZ",
-    position: "1st Runner Up",
-    project: "HOSTEL ROOMATE FINDER",
-    description: "Built a real-time traffic management system using IoT sensors and ML for predicting traffic patterns.",
-    tech: ["IoT", "Machine Learning", "React", "MongoDB"],
-    image: "/hackathons/mlh.png",
-    date: "January 2024",
-    prize: "₹50,000"
-  }
+  
 ]
 
 export function Hackathons() {
@@ -39,7 +30,7 @@ export function Hackathons() {
         Hackathon Achievements
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className={`grid grid-cols-1 md:grid-cols-${hackathons.length === 1 ? '1' : '2'} gap-8 ${hackathons.length === 1 ? 'max-w-md mx-auto' : ''}`}>
         {hackathons.map((hackathon, index) => (
           <motion.div
             key={hackathon.title}
