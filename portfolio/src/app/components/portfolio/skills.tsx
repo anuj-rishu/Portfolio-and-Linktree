@@ -45,7 +45,15 @@ const skillCategories = [
   },
 ];
 
-function SkillCard({ category, index }) {
+interface SkillCardProps {
+  category: {
+    title: string;
+    skills: string[];
+  };
+  index: number;
+}
+
+function SkillCard({ category, index }: SkillCardProps) {
   return (
     <motion.div
       key={category.title}

@@ -22,10 +22,10 @@ export default function ContactPage() {
                        bg-gradient-to-r from-white via-white/90 to-white/70 
                        bg-clip-text text-transparent"
           >
-            Let's Connect
+            Let&apos;s Connect
           </h1>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Have an exciting project or just want to say hello? I'd love to hear
+            Have an exciting project or just want to say hello? I&apos;d love to hear
             from you.
           </p>
         </motion.div>
