@@ -8,7 +8,7 @@ export function LinkTree() {
     {
       name: "Portfolio",
       icon: <Globe size={20} className="text-white" />,
-      url: "https://www.anuj.anujrishu.me",
+      url: "https://anuj.anujrishu.me",
       color: "hover:bg-blue-500/30 hover:text-blue-200",
     },
     {
