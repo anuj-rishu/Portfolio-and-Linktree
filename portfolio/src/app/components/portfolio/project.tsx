@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "Telegram Bot for SRM Academia",
     description: "A Telegram bot that provides SRM University students with easy access to their academic information, including attendance, marks, class schedules, and real-time notifications.",
     image: "https://res.cloudinary.com/dtberehdy/image/upload/v1742233437/telegram%20bot.png",
-    tech: ["Telegram API", "Node.js", "MongoDB", "AWS EC2"],
+    tech: ["Telegram API", "Node.js", "MongoDB","Docker", "Ngnix", "AWS EC2"],
     demo: "https://t.me/srm_academia_bot",
     code: "https://github.com/anuj-rishu/Telegram-Bot-For-SRM-Academia",
   },
@@ -37,6 +37,14 @@ const projects: Project[] = [
     tech: ["Next.js", "Node.js", "Tailwind CSS", "Framer Motion" ,"MongoDB", "AWS EC2"],
     demo: "https://SrmRoomie.vercel.app",
     code: "https://github.com/anuj-rishu/SrmRoomie",
+  },
+  {
+    title: "SellOut-SIH034",
+    description: "A WhatsApp-based chatbot to discover museums and book tickets, built for Smart India Hackathon (SIH034).",
+    image: "https://res.cloudinary.com/dtberehdy/image/upload/v1744475910/SellOut-SIH034.png",
+    tech: ["WhatsApp Web js", "Node.js", "Mongodb", "Docker" ,"MongoDB", "AWS EC2"],
+    // demo: "#",
+    code: "https://github.com/anuj-rishu/SellOut-SIH034-",
   },
 ]
 
