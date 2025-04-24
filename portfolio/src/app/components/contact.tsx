@@ -42,7 +42,7 @@ export default function ContactPage() {
 
     try {
       await axios.post(
-        "https://link-tree-backend-c9mp.vercel.app/api/send",
+        `${process.env.NEXT_PUBLIC_API_URL}/send`,
         formData
       );
       setLoading(false);
