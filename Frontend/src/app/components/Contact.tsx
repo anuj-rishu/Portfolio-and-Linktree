@@ -25,7 +25,7 @@ export function Contact() {
         setLoading(true);
         toast.loading('Sending message...', { id: 'sending' });
         try {
-            await axios.post('https://link-tree-backend-c9mp.vercel.app/api/send', formData);
+            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/send`, formData);
             setLoading(false);
             toast.success('Message sent successfully!', {
                 id: 'sending',
