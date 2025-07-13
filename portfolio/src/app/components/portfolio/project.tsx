@@ -34,9 +34,9 @@ const projects: Project[] = [
     title: "SRM Roomie",
     description: "SRM Roomie – a Tinder-inspired hostel roommate finder for students! Create a profile, match with your ideal roommate based on preferences, and book your hostel room hassle-free. Find your perfect match at SRM! .",
     image: "https://res.cloudinary.com/dtberehdy/image/upload/v1742233575/Roomie.png",
-    tech: ["Next.js", "Node.js", "Tailwind CSS", "Framer Motion" ,"MongoDB", "AWS EC2"],
-    demo: "https://SrmRoomie.vercel.app",
-    code: "https://github.com/anuj-rishu/SrmRoomie",
+    tech: ["Next.js", "Node.js", "Tailwind CSS", "Framer Motion" ,"MongoDB", "Digital Ocean", "AWS SES"],
+    demo: "https://srmroomie.srminsider.live",
+    // code: "https://github.com/anuj-rishu/SrmRoomie",
   },
   {
     title: "SellOut-SIH034",
